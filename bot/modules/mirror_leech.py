@@ -316,11 +316,11 @@ def start_ml(extra, s_listener):
             content_type = None
         else:
             content_type = get_content_type(link)
-        if content_type is None or re_match(r'application/x-bittorrent|application/octet-stream', content_type):
+        if content_type is None or re_match(r'application/x-bittorrent', content_type):
             try:
                 resp = rget(link, timeout=10, headers = {'user-agent': 'Wget/1.12'})
                 if resp.status_code == 200:
-                    file_name = str(time()).replace(".", "") + ".torrent"
+                    file_name = str(time()).replace(".", "") + ('.torrent')
                     with open(file_name, "wb") as t:
                         t.write(resp.content)
                     link = str(file_name)
