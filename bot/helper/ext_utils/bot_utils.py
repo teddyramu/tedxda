@@ -19,7 +19,7 @@ from telegram.ext import CallbackQueryHandler
 
 MAGNET_REGEX = r"magnet:\?xt=urn:btih:[a-zA-Z0-9]*"
 
-URL_REGEX = r"(?:(?:https?|ftp):\/\/)?[\w/\-?=%.]+\.[\w/\-?=%.]+"
+URL_REGEX = r"^(?!\/)(rtmps?:\/\/|mms:\/\/|rtsp:\/\/|https?:\/\/|ftp:\/\/)?([^\/:]+:[^\/@]+@)?(www\.)?(?=[^\/:\s]+\.[^\/:\s]+)([^\/:\s]+\.[^\/:\s]+)(:\d+)?(\/[^#\s]*[\s\S]*)?(\?[^#\s]*)?(#.*)?$"
 
 COUNT = 0
 PAGE_NO = 1

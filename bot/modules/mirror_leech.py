@@ -99,6 +99,7 @@ def _mirror_leech(bot, message, isZip=False, extract=False, isQbit=False, isLeec
 
     if len(message_args) > 1:
         args = mesg[0].split(maxsplit=4)
+        args.pop(0)
         for x in args:
             x = x.strip()
             if x in ['|', 'pswd:']:
